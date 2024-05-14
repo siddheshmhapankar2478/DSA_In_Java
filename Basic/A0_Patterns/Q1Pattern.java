@@ -8,14 +8,6 @@ public class Q1Pattern{
         }
     }
     public static void pattern2(int n) {
-        for(int rows=1;rows<=n;rows++){
-            for(int cols=1;cols<=rows;cols++){
-                System.out.print("*");
-            }
-                System.out.println();
-        }
-    }
-    public static void pattern2method2(int n) {
         int nst=1;
         for(int rows=1;rows<=n;rows++){
             for(int cols=1;cols<=nst;cols++){
@@ -26,16 +18,6 @@ public class Q1Pattern{
         }
     }
     public static void pattern3(int n) {
-        int count=1;
-        for(int rows=1;rows<=n;rows++){
-            for(int cols=1;cols<=rows;cols++){
-                System.out.print(count);
-                count++;
-            }
-            System.out.println();
-        }
-    }
-    public static void pattern3method2(int n) {
         int count=1,nst=1;
         for(int rows=1;rows<=n;rows++){
             for(int cols=1;cols<=rows;cols++){
@@ -79,7 +61,7 @@ public class Q1Pattern{
                 System.out.print("*");                
             }   
             System.out.println();
-            if(rows<=(n)/2){
+            if(rows<=n/2){
                 nst--;
                 space=space+2;
             }else{
@@ -88,14 +70,36 @@ public class Q1Pattern{
             }
         }
     }
+    public static void pattern6(int n){
+        int space=n/2,nst=1;
+        for(int rows=1;rows<=n;rows++){
+            for(int cols=1;cols<=space;cols++){
+                System.out.print(" ");
+            }
+            int num=rows<=n/2?rows:(n-rows+1);
+            for(int cols=1;cols<=nst;cols++){
+                System.out.print(cols<=nst/2?num++:num--);
+            }
+            System.out.println();
+            if(rows<=n/2){
+                nst=nst+2;
+                space--;
+            }else{
+                nst=nst-2;
+                space++;
+            }
+        }
+
+    }
+
+
     public static void main(String[] args) {
-        // pattern1(5);
-        // pattern2(5);
-        // pattern2method2(5);
-        // pattern3(5);
-        // pattern3method2(5);
-        // pattern4(9);
+        pattern1(5);
+        pattern2(5);
+        pattern3(5);
+        pattern4(9);
         pattern5(7);
+        pattern6(5);
 
     }
 }
