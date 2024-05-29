@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Q10SumOfAllQueries {
     public static void main(String[] args) {
-        int[] arr={10,20,30,40,50,60,70,80,90};
+        int[] arr={10,20,30,40,50,60,70,80,90,100};
         int[][]query={{3,8},{2,5},{0,3},{5,9},{6,6}};
         int[] ans=sumOfAllQueries(arr,query);
         System.out.println(Arrays.toString(ans));
@@ -19,7 +19,7 @@ public class Q10SumOfAllQueries {
         int[] ans=new int[n];
         for(int i=0;i<n;i++){
             int start=query[i][0];
-            int end=query[i][0];
+            int end=query[i][1];
             int sum=suminRange(arr, start, end);
             ans[i]=sum;
         }
